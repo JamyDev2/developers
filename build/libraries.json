@@ -1,38 +1,56 @@
 [
     {
-        "language": "java",
+        "icon": "lang-java.svg",
         "name": "Mixer/beam-client-java",
-        "alias": "client-java",
+        "alias": "REST Java SDK",
         "official": true
     },
     {
-        "language": "js",
-        "name": "Mixer/beam-client-node",
-        "alias": "client-node",
-        "official": true
-    },
-    {
-        "language": "python",
-        "name": "Mixer/beam-client-python",
-        "alias": "client-python",
-        "official": true
-    },
-    {
-        "language": "swift",
-        "name": "Mixer/beam-client-swift",
-        "alias": "client-swift",
-        "official": true
-    },
-    {
-        "language": "js",
+        "icon": "lang-js.svg",
         "name": "Mixer/interactive-node",
-        "alias": "interactive-node",
+        "alias": "Interactive Node SDK",
         "official": true
     },
     {
-        "language": "java",
+        "icon": "lang-java.svg",
         "name": "Mixer/interactive-java",
-        "alias": "interactive-java",
+        "alias": "Interactive Java SDK",
+        "official": true
+    },
+    {
+        "icon": "lang-cpp.svg",
+        "name": "Mixer/interactive-cpp",
+        "alias": "Interactive C++ SDK",
+        "official": true
+    },
+    {
+        "icon": "unity.png",
+        "name": "Mixer/interactive-unity-plugin",
+        "alias": "Interactive Unity SDK",
+        "official": true
+    },
+    {
+        "icon": "ue4.png",
+        "name": "mixer/interactive-unreal-plugin",
+        "alias": "Unreal 4 Interactive SDK",
+        "official": true
+    },
+    {
+        "icon": "lang-js.svg",
+        "name": "Mixer/beam-client-node",
+        "alias": "REST & Chat Node SDK",
+        "official": true
+    },
+    {
+        "icon": "lang-python.svg",
+        "name": "Mixer/beam-client-python",
+        "alias": "Chat Python SDK",
+        "official": true
+    },
+    {
+        "icon": "lang-swift.svg",
+        "name": "Mixer/beam-client-swift",
+        "alias": "REST Swift SDK",
         "official": true
     }
 ]

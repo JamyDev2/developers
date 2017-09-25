@@ -276,7 +276,7 @@ module.exports = (gulp) => {
                 return response.json();
             })
             .then(json => ({
-                language: lib.language,
+                icon: lib.icon,
                 official: lib.official,
                 name: lib.alias || lib.name.split('/').pop(),
                 updatedAt: new Date(json.pushed_at).toDateString(),
@@ -289,7 +289,7 @@ module.exports = (gulp) => {
         .then(result => {
             fs.writeFileSync(
                 path.join(config.src.tmp, 'libraries.json'),
-                JSON.stringify(_.sortBy(result, 'language'), null, '   ')
+                JSON.stringify(_.sortBy(result, 'icon'), null, '   ')
             );
         });
     });
