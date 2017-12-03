@@ -48,7 +48,7 @@ block reference
 
     h3(id='chat__packets__method') Method
     p.
-        A method is sent to the chat server the server will respond with a #[a(href='#chat__packets__reply') Reply packet].
+        When a #[code method] packet is sent to the chat server, the server will then respond with a #[a(href='#chat__packets__reply') Reply packet].
     table.table
         tbody
             tr
@@ -73,8 +73,7 @@ block reference
                     the #[a(href='#chat__packets__reply') Reply] packet.
     h3(id='chat__packets__reply') Reply
     p.
-        A reply is received from the server in response to a
-        #[a(href='#chat__packets__method') Method] packet.
+        A reply is received from the server in response to a #[a(href='#chat__packets__method') Method] packet.
     table.table
         tbody
             tr
@@ -85,11 +84,15 @@ block reference
             tr
                 td
                     code error
-                td If an error  has not occured #[code null], otherwise an error message.
+                td A human-readable error message. This property will be #[code null] if no error occurred.
+            tr
+                td
+                    code errorCode
+                td A numeric code that uniquely identifies the error. This property will not be set if no error occurred.
             tr
                 td
                     code data
-                td Associated event data - may be of any type, specific to the event.
+                td Associated event data. This may be of any type, and is specific to the event.
             tr
                 td
                     code id
@@ -129,6 +132,7 @@ block reference
             ol
                 for arg in data.arguments
                     li!= marked(arg)
+        h4 Examples:
         table.table
             thead
                 th.col-xs-6 Request
@@ -151,6 +155,15 @@ block reference
                             td.col-xs-6: +highlightStr('json', JSON.stringify(data.example.response, null, 3))
                         else
                             td.col-xs-6 No response
+        if data.errors
+            h4 Errors:
+            table.table
+                tbody
+                    for explanation, code in data.errors
+                        tr
+                            td.col-xs-1
+                                code= code
+                            td.col-xs-11= explanation
 
     h1(id='chat__events') Events
     for data, event in chat.events
@@ -166,6 +179,15 @@ block reference
 
     h1(id='chat__costreaming') Costreaming
     p In costreaming, multiple channels' chats are merged into one. All packets are identical, and the various Channel properties in methods and events include the channel each action was triggered from.
+
+    h1(id='chat__errors') Generic errors
+    table.table
+        tbody
+            for explanation, code in chat.errors
+                tr
+                    td.col-xs-1
+                        code= code
+                    td.col-xs-11= explanation
 
     h1(id='chat__troubleshooting') Troubleshooting
     h3 Getting #[code UNOTFOUND] a lot?

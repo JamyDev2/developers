@@ -81,7 +81,14 @@
             }
           }
         }
-      ]
+      ],
+      "errors": {
+        "4022": "The socket has already authenticated successfully. If you would like to authenticate again, you must reconnect.",
+        "4023": "The arguments property sent is invalid; please make sure it is an array.",
+        "4024": "The authentication key provided is either invalid, or does not match the user ID you have provided. Please see our Troubleshooting section for advice and common causes.",
+        "4025": "The channel ID provided does not exist.",
+        "4026": "You do not have permission to join the chat at this time."
+      }
     },
     "msg": {
       "description": "Send a chat message to the server. The server will reply with data identical to a [ChatMessage](#chat__events__) event.",
@@ -124,6 +131,12 @@
             }
           }
         }
+      },
+      "errors": {
+        "4007": "The message could not be sent because the user has been timed out.",
+        "4008": "The message could not be sent because multiple messages were sent too quickly, either due to the channel's \"slow chat\" setting or global server rate limits.",
+        "4013": "The message was prefixed with /me, but no message was provided afterwards.",
+        "4016": "The message sent contained a link, but the channel does not allow links."
       }
     },
     "whisper": {
@@ -172,6 +185,10 @@
             "target": "username"
           }
         }
+      },
+      "errors": {
+        "4003": "No user was provided in the first argument.",
+        "4004": "This channel does not allow you to send whispers."
       }
     },
     "vote:choose": {
@@ -225,6 +242,12 @@
           "id": 3,
           "data": "Poll started."
         }
+      },
+      "errors": {
+        "4009": "The poll question provided is not a string, too short, or too long.",
+        "4010": "The poll answers provided is either not an array, has too many answers, or too few answers.",
+        "4011": "The poll duration provided is either not a number, less than 5 seconds, or greater than 300 seconds (5 minutes).",
+        "4012": "A poll is already running in the channel."
       }
     },
     "timeout": {
@@ -250,6 +273,10 @@
           "id": 4,
           "data": "username has been timed out for 30s."
         }
+      },
+      "errors": {
+        "4005": "The current user does not have permission to time the provided user out.",
+        "4006": "The duration provided is invalid, either because the provided duration is not in a valid format (such as \"30s\" or \"1m15s\") or it was less than one second."
       }
     },
     "purge": {
@@ -272,6 +299,10 @@
           "error": null,
           "id": 5
         }
+      },
+      "errors": {
+        "4001": "The user to purge cannot be found.",
+        "4002": "The current user does not have permission to purge the provided user's chat."
       }
     },
     "deleteMessage": {
@@ -295,6 +326,10 @@
           "id": 10,
           "data": "Message deleted."
         }
+      },
+      "errors": {
+        "4014": "The message to delete could not be found.",
+        "4015": "The current user does not have permission to delete the message provided."
       }
     },
     "clearMessages": {
@@ -373,6 +408,9 @@
           "id": 11,
           "data": "Starting a giveaway"
         }
+      },
+      "errors": {
+        "4017": "There are no users in the chat to run the giveaway with."
       }
     },
     "ping": {
@@ -781,5 +819,12 @@
         }
       }
     }
+  },
+  "errors": {
+    "4000": "An unknown or internal error occurred.",
+    "4018": "The method provided is unknown.",
+    "4019": "The arguments property sent is invalid; please make sure it is an array.",
+    "4020": "The method requires you to be authenticated; please authenticate first.",
+    "4021": "The current user does not have permission to call that method."
   }
 }
